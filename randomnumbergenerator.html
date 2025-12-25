@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANDOM</title>
+    <style>body{
+    text-align: center;
+}
+#MyButton{
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: linear-gradient(rgb(189, 216, 211),rgb(132, 141, 149));
+}
+#MyButton:hover{
+    background: rgb(133, 133, 143);
+}
+#MyLabel{
+  font-size: 6em;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(26, 83, 81);
+}</style>
+</head>
+<body>
+    <button id="MyButton">ROLL</button><br>
+    <label id="MyLabel"></label>
+    <script>
+        // alert("Click to continue");
+const MyButton=document.getElementById("MyButton");
+const MyLabel=document.getElementById("MyLabel");
+const min=1;
+const max=6;
+let random;
+
+MyButton.onclick=function(){
+    random=Math.floor(Math.random()*max)+min;
+    MyLabel.textContent=random;
+}
+    </script>
+</body>
+</html>
