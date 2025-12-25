@@ -3,102 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do</title>
-
-    <style>
-        body {
-    background: linear-gradient(to bottom right, #fff7ad, #ffcf71);
-}
-
-        .todo-box{
-            width: 350px;
-            margin: 40px auto;
-            padding: 20px;
-            border: 2px solid black;
-            border-radius: 10px;
-            background-color: beige;
-        }
-
-        #btn{
-            background-color: blanchedalmond;
-            border-radius: 20%;
-        }
-
-        #taskbox {
-            background-color: blanchedalmond;
-        }
-
-        .top{
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        #tasks{
-            margin-top: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .del{
-            border-radius: 20%;
-            background-color: rgb(255, 214, 170);
-        }
-
-        .taskbox{
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-    </style>
+    <title>TO-DO-LIST</title>
 </head>
-
+<style>
+    body{
+         height: 100vh auto;
+        background-color: black;
+        background: linear-gradient(to right,rgb(66, 66, 61),rgb(65, 60, 63),rgb(244, 226, 226));
+        
+    }
+    #box{
+        margin: 30px auto;
+        width: 80%;
+        box-shadow: 5px 5px 10px white;
+        border: 2px solid black;
+        text-align: center;
+        border-radius: 10px;
+    }
+    #box:hover{
+         transform: scale(1.1);  
+        background:linear-gradient(to right,white,rgb(192, 93, 93),beige);
+        box-shadow:5px 5px 10px rgb(160, 128, 44);
+    }
+    #ButtonBtn{
+            box-shadow: 5px 5px 10px black;
+            cursor: pointer;
+            background: linear-gradient(to top,beige,aliceblue,lightblue);
+    }
+    #ButtonBtn:hover{
+        background: rgb(241, 136, 136);
+    }
+    input{
+        margin: 4px;
+        padding: 3px;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        font-family: sans-serif;
+        color: white;
+        margin-top: 5px 
+    }
+    #DeleteBtn{
+        box-shadow: 5px 5px 10px;
+        cursor: pointer;
+        margin: 10px;
+        background: linear-gradient(to right,beige,aliceblue,lightblue);
+    }
+    #DeleteBtn:hover{
+        background: rgb(241, 136, 136);
+    }
+    #EditBtn{
+        box-shadow: 3px 3px 7px;
+        cursor: pointer;
+        background: linear-gradient(to right,beige,aliceblue,lightblue);
+    }
+    #EditBtn:hover{
+        background: rgb(241, 136, 136);
+    }
+    #box1{
+        background:linear-gradient(to right,brown,rgb(194, 94, 94),rgb(73, 30, 30));
+        height: 500px;
+        width: 300px;
+        border: 2px solid black;
+        margin: 5px 0;
+        padding: 10px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow:5px 5px 10px rgb(35, 5, 5);
+        color: white;
+    }
+    #box1 img{
+    width: 100%;
+    height: 50%;
+    border-radius: 8px;
+    margin: 5px 0;
+    }
+    #box1:hover{
+           transform: scale(1.1);  
+        box-shadow: 5px 5px 10px burlywood;
+        
+    }
+    #box2{
+      background:linear-gradient(to right,brown,rgb(194, 94, 94),rgb(73, 30, 30));
+        height: 500px;
+        width: 300px;
+        border: 2px solid black;
+        margin: 5px 0;
+        padding: 10px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow:5px 5px 10px rgb(35, 5, 5);
+        color: white;
+    }
+    #box2 img{
+    width: 100%;
+    height: 50%;
+    border-radius: 8px;
+    margin: 5px 0;
+    }
+    #box2:hover{
+           transform: scale(1.1);  
+        box-shadow: 5px 5px 10px burlywood;
+        
+    }
+    #box3{
+        background:linear-gradient(to right,brown,rgb(194, 94, 94),rgb(73, 30, 30));
+        height: 500px;
+        width: 300px;
+        border: 2px solid black;
+        margin: 5px 0;
+        padding: 10px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow:5px 5px 10px rgb(35, 5, 5);
+        color: white;
+    }
+    #box3 img{
+    width: 100%;
+    height: 50%;
+    border-radius: 8px;
+    margin: 5px 0;
+    }
+    #box3:hover{
+           transform: scale(1.1);  
+        box-shadow: 5px 5px 10px burlywood;
+        
+    }
+    #bigb{
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        margin-top: 15px;
+    }
+</style>
 <body>
-
-    <div class="todo-box">
-        <div class="top">
-            <input type="text" id="taskbox" placeholder="Add a Task">
-            <button id="btn">Add</button>
-        </div>
-
-        <div id="tasks"></div>
+    <div id="box">
+        <h1>TO-DO-LIST:</h1>
+        <h2>Add Task:</h2>
+        <input type="text" placeholder="Enter the task" id="input1">
+        <button id="ButtonBtn">SUBMIT</button>
+        <ul id="taskList">
+        </ul>
+        <button id="DeleteBtn">DELETE</button>
+        <button id="EditBtn">EDIT</button>
     </div>
+    <div id="bigb">
+    <div id="box1" > 
+        <h2>project 1</h2>
+        <img src="https://images.unsplash.com/photo-1598153346810-860daa814c4b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGFycnklMjBwb3R0ZXJ8ZW58MHx8MHx8fDA%3D" alt="HOGWARTS">HOGWARTS
+        <p>Hogwarts School of Witchcraft and Wizardry, the finest magic school in the world.</p>
+    </div>
+    <div id="box2">
+        <h2>Project 2</h2>
+        <img src="https://images.unsplash.com/photo-1618944847023-38aa001235f0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGFycnklMjBwb3R0ZXJ8ZW58MHx8MHx8fDA%3D" alt="">PLATFORM 9 3/4
+        <p>Platform 9¾ is the hidden magical platform at London's King's Cross station where Hogwarts students board the Hogwarts Express by running through a seemingly solid brick wall.</p>
+    </div>
+    <div id="box3">
+        <h2>Project 3</h2>
+        <img src="https://plus.unsplash.com/premium_photo-1729937839800-575cf136ea0e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="HOGWARTS EXPRESS">THE ICONIC BRIDGE
+        <p>The iconic Hogwarts Express bridge, known in the real world as the Glenfinnan Viaduct, is a spectacular 21-arch railway viaduct in Scotland, famous for its feature in the Harry Potter films.</p>
+    </div>
+    </div>
+    <script>const input1=document.getElementById("input1");
+const ButtonBtn = document.getElementById("ButtonBtn");
+const taskList = document.getElementById("taskList");
+const hed2=document.querySelector("#box h2");  
+    
+ButtonBtn.onclick = function () {
+    const task=input1.value; 
+    const li=document.createElement("li");
+    li.textContent=task;
+    taskList.appendChild(li);
+    input1.value = "";
+    DeleteBtn.onclick=function(){
+    taskList.removeChild(li);
+    };
+    EditBtn.onclick=function(){
+    const newTask = prompt("Edit your task:", li.firstChild.textContent);
+    li.firstChild.textContent = newTask;
+    };
+};
 
-    <script>
-        let input = document.getElementById("taskbox");
-        let btn = document.getElementById("btn");
-        let tasksContainer = document.getElementById("tasks");
+input1.addEventListener("input",function(){
+    hed2.innerText="Adding Task"
+    hed2.style.color="white";
+})
+input1.addEventListener("blur", function () {
+    hed2.innerText = "Add Task";
+})
 
-        btn.onclick = function () {
-            if (input.value === "") return;
 
-            let box = document.createElement("div");
-            box.className = "taskbox";
-
-            let text = document.createElement("span");
-            text.innerText = input.value;
-
-            let del = document.createElement("button");
-            del.innerText = "Delete";
-            del.className = "del";
-
-            del.onclick = function () {
-                box.remove();
-            }
-
-            text.onclick = function () {
-                let newText = prompt("Edit:", text.innerText);
-                if (newText !== "") text.innerText = newText;
-            }
-
-            box.appendChild(text);
-            box.appendChild(del);
-            tasksContainer.appendChild(box);
-
-            input.value = "";
-        }
-    </script>
-
+</script>
 </body>
 </html>
